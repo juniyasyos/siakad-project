@@ -1,0 +1,48 @@
+cd "
+C:\laragon\www\siakad-project>
+cd ..
+C:\laragon\www\siakad-project>
+cd laragon
+cd www
+cd Siakad-App
+cd ..
+cls
+cd siakad-project
+cls
+valet secure siakad-project
+valet secured
+cls
+valet secure
+valet proxy 
+valet proxy siakad-project.test http://127.0.0.1:8000
+php artisan config:clear
+php artisan optimize
+cls
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout siakad-project.key -out siakad-project.crt -subj "/CN=siakad-project.test"
+copy siakad-project.key "%USERPROFILE%\.config\valet\Certificates"
+copy siakad-project.crt "%USERPROFILE%\.config\valet\Certificates"
+notepad C:\laragon\etc\nginx\sites-available\siakad-project.test
+laragon reload
+cls
+valet unsecure siakad-project
+valet unsecured
+valet unsecure
+cls
+dir
+cd ..
+cd etc
+cd nginx
+DIR
+cd sites-enabled
+dir
+cd ..
+cd alias
+dir
+cls
+cd ..
+cd www
+cd siakad-project
+cls
+history
+cls
+doskey /history > history.txt
