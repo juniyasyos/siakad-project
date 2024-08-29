@@ -14,11 +14,14 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "filament/filament": "^3.2",
         "inertiajs/inertia-laravel": "^1.0",
+        "jeffgreco13/filament-breezy": "^2.4",
         "laravel/framework": "^11.9",
         "laravel/octane": "^2.5",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
+        "shipu/web-installer": "^1.0",
         "silviolleite/laravelpwa": "^2.0",
         "tightenco/ziggy": "^2.0"
     },
@@ -46,7 +49,8 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php artisan filament:upgrade"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
@@ -75,5 +79,11 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": {
+        "whizzy": {
+            "type": "composer",
+            "url": "https://filament-theme-os-light.composer.sh"
+        }
+    }
 }
